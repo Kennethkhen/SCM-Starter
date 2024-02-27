@@ -1,12 +1,86 @@
-# Starter Next/Hardhat Project
+# Assessment Smart Contract
 
-After cloning the github, you will want to do the following to get the code running on your computer.
+## Overview
 
-1. Inside the project directory, in the terminal type: npm i
-2. Open two additional terminals in your VS code
-3. In the second terminal type: npx hardhat node
-4. In the third terminal, type: npx hardhat run --network localhost scripts/deploy.js
-5. Back in the first terminal, type npm run dev to launch the front-end.
+This is a Solidity smart contract named `Assessment` that implements basic functionalities for managing an account's balance, allowing deposits, withdrawals, and purchases of items. It includes event logging for key actions and custom error handling for specific scenarios.
 
-After this, the project will be running on your localhost. 
-Typically at http://localhost:3000/
+## License
+
+This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
+
+## Prerequisites
+
+- [Solidity](https://docs.soliditylang.org/en/latest/)
+
+## Contract Details
+
+- **Solidity Version:** ^0.8.9
+- **Owner:** The owner of the contract, who has privileged access to deposit and withdraw funds.
+
+## Functions
+
+### `constructor(uint initBalance)`
+
+- **Description:** Constructor to initialize the contract with an initial balance.
+- **Parameters:**
+  - `initBalance` (uint): The initial balance of the contract.
+
+### `getBalance()`
+
+- **Description:** Retrieves the current balance of the contract.
+- **Returns:** `uint256`: The current balance.
+
+### `deposit(uint256 _amount)`
+
+- **Description:** Allows the owner to deposit additional funds into the contract.
+- **Parameters:**
+  - `_amount` (uint256): The amount of funds to deposit.
+
+### `withdraw(uint256 _withdrawAmount)`
+
+- **Description:** Allows the owner to withdraw funds from the contract.
+- **Parameters:**
+  - `_withdrawAmount` (uint256): The amount of funds to withdraw.
+
+### `buy(string memory _item)`
+
+- **Description:** Allows anyone to purchase items by specifying the item name.
+- **Parameters:**
+  - `_item` (string): The name of the item to purchase.
+
+## Events
+
+### `Deposit(uint256 amount)`
+
+- **Description:** Emitted when funds are deposited into the contract.
+- `amount` (uint256): The amount of funds deposited.
+
+### `Withdraw(uint256 amount)`
+
+- **Description:** Emitted when funds are withdrawn from the contract.
+- `amount` (uint256): The amount of funds withdrawn.
+
+### `ItemBought(string item, uint256 price)`
+
+- **Description:** Emitted when an item is successfully purchased.
+- `item` (string): The name of the purchased item.
+- `price` (uint256): The price of the purchased item.
+
+## Custom Error
+
+### `InsufficientBalance(uint256 balance, uint256 withdrawAmount)`
+
+- **Description:** Custom error thrown when attempting to withdraw more funds than the contract balance.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## Support
+
+For support, contact [Your Email Address].
+
+## Disclaimer
+
+This code is provided as-is, without any warranty or support. Use at your own risk.
+
