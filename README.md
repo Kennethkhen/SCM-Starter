@@ -8,6 +8,7 @@ This is a Solidity smart contract named `Assessment` that implements basic funct
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
 
+
 ## Prerequisites
 
 - [Solidity](https://docs.soliditylang.org/en/latest/)
